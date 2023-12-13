@@ -28,17 +28,17 @@ const App = () => {
         };
     }, []);
 
-    const renderBallOrButton = () => {
-        if (renderBall) {
-            return <div className="ball" style={ballPosition}></div>;
-        } else {
-            return <button onClick={buttonClickHandler}>Start</button>;
-        }
-    };
+    // const renderBallOrButton = () => {
+    //     if (renderBall) {
+    //         return <div className="ball" style={ballPosition}></div>;
+    //     } else {
+    //         return <button onClick={buttonClickHandler}>Start</button>;
+    //     }
+    // };
 
     return (
         <div className="playground">
-            {renderBallOrButton()}
+            {renderBall?<div className="ball" style={ballPosition}></div>: <button onClick={buttonClickHandler}>Start</button>}
         </div>
     );
 };
