@@ -10,22 +10,24 @@ const App = () => {
         setRenderBall(true);
     };
 
-  
+  // Inside your component
+const handleKeyDown = (event) => {
+    if (event.key === "ArrowRight") {
+        setPosi(prevPosi => prevPosi + 5);
+    } 
+};
+
+useEffect(() => {
+    setBallPosition({ left: posi + "px" });
+}, [posi]);
 
     useEffect(() => {
-        const handleKeyDown = (event) => {
-            if (event.key === "ArrowRight") {
-                setPosi(prevPosi => prevPosi + 5);
-                setBallPosition({ left: posi + "px" });
-            } 
-        };
-    
         document.addEventListener("keydown", handleKeyDown);
 
         return () => {
             document.removeEventListener("keydown", handleKeyDown);
         };
-    }, [posi]);
+    }, []);
 
     // const renderBallOrButton = () => {
     //     if (renderBall) {
