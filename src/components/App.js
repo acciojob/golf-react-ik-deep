@@ -38,7 +38,7 @@ const App = () => {
 
     return (
         <div className="playground">
-            {renderBall?<div className="ball" style={ballPosition}></div>: <button onClick={buttonClickHandler}>Start</button>}
+            {renderBall?<div className="ball" style={ballPosition}></div>: <button className="start" onClick={buttonClickHandler}>Start</button>}
         </div>
     );
 };
