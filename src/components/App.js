@@ -25,7 +25,7 @@ const App = () => {
         return () => {
             document.removeEventListener("keydown", handleKeyDown);
         };
-    }, []);
+    }, [posi]);
 
     // const renderBallOrButton = () => {
     //     if (renderBall) {
